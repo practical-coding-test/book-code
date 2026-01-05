@@ -22,10 +22,10 @@ def bfs(arr, virus, visit):
 
     t = 0
     notEmpty = 0
-    
+
     while dq:
         count = len(dq)
-        
+
         # 조건문이 int 타입일 경우 int가 0이면 False, 이외에는 True
         while count:
             count -= 1

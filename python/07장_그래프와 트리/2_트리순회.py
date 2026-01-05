@@ -9,10 +9,10 @@ class node:
         self.node = node
         self.left = left
         self.right = right
-        
+
 def travel(now:node):
     if not now: return
-    
+
     preorder.append(now.node)
     travel(now.left)
     inorder.append(now.node)
@@ -28,7 +28,7 @@ for i in range(n):
     node = trie[now]
     left = trie[left]
     right = trie[right]
-    
+
     node.left = left
     node.right = right
 

@@ -13,5 +13,5 @@ for k in range(1, n + 1):
     for i in range(k, n + 1):
         for j in range(k, n + 1):
             ans = max(tree[i][j] - tree[i - k][j] - tree[i][j - k] + tree[i - k][j - k], ans)
-            
+
 print(ans)

@@ -14,7 +14,7 @@ def permutation(len):
             print(i, end=' ')
         print()
         return
-    
+
     for i in range(N):
         # 1 ~ n 까지의 수 선택
         v = i+1

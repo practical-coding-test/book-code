@@ -7,14 +7,14 @@ def binary_search(dest, arr):
     while start < end:
         mid = (start+end)//2
         num = arr[mid]
-        
+
         if dest == num:
              return 1
         elif num < dest:
             start = mid + 1
         else:
             end = mid
-    
+
     return 0
 
 

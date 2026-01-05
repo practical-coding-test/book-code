@@ -21,7 +21,7 @@ for push in range(1<<n):
 
     for i in range(n):
         bulb[i][:] = bulb_init[i][:]
-    
+
     for j in range(n):
         # 제일 위의 j번째 전구를 눌렀을 경우 처리
         if push & (1 << j):

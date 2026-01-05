@@ -31,7 +31,7 @@ for building in range(n):
 
 while dq:
     constructed = dq.popleft()
-    
+
     for next in adj[constructed]:
         # 다음 건물의 완성 시간은 이전 건물이 완성된 시간과 해당 건물을 짓는 시간을 더한 값들 중에서 최댓값이 됩니다.
         build_time[next] = max(build_time[next], build_time[constructed] + need_time[next])

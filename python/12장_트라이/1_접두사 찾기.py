@@ -33,7 +33,7 @@ class Trie:
             if char not in node.child:
                 return False
             node = node.child[char]
-        
+
         return True
 
 n, m = map(int, input().split())

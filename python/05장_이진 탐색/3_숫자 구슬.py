@@ -4,7 +4,7 @@ def determine(bead, dest, m):
     bead_sum = 0
     bead_num = []
     num = 0
-    
+
     group_num = 1
     for b in bead:
         if bead_sum + b > dest:

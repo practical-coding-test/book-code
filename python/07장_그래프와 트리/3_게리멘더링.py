@@ -27,7 +27,7 @@ def travel(agent, flag):
 def choose_group_agent():
     g1_agent = -1
     g2_agent = -1
-    
+
     for i in range(n):
         if select[i]:
             g1_agent = i
@@ -68,13 +68,13 @@ def combination(i, n):
         if check(g1_agent, g2_agent):
             min_diff = min(min_diff, get_diff())
         return
-    
+
     select[i] = True
     combination(i+1,n)
     select[i] = False
     combination(i+1,n)
     return
-    
+
 for i in range(n):
     adj.append(list(map(lambda x: int(x)-1,input().split()))[1:])
 

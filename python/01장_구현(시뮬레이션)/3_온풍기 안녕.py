@@ -57,7 +57,7 @@ def hot_wind(temperature, wall, hitter, visit):
         if t == 0: continue
 
         temperature[r][c] += t
-            
+
         if (wall[r][c] & (1 << d)) == 0:
             nr, nc = r + dr[d], c + dc[d]
             if visit[nr][nc] != offset:
@@ -75,7 +75,7 @@ def hot_wind(temperature, wall, hitter, visit):
             if visit[nnr][nnc] != offset:
                 visit[nnr][nnc] = offset
                 dq.append((nnr,nnc,t-1))
-    
+
 def simulate(temperature, hitter, wall, visit):
     for hit in hitter:
         hot_wind(temperature,wall, hit, visit)
@@ -106,7 +106,7 @@ for i in range(R):
         elif v != 0:
             d = conv[v]
             hitter.append((i + dr[d],j + dc[d],d))
-            
+
 # 0: 상 1 : 우
 for i in range(int(input())):
     r,c,d = map(int,input().split())

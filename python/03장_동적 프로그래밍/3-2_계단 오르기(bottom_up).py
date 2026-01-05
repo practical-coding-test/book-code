@@ -19,5 +19,5 @@ if n > 1:
 for i in range(2, n):
     score[1][i] = stair[i] + score[2][i-1]
     score[2][i] = stair[i] + max(score[1][i-2], score[2][i-2])
-    
+
 print(max(score[1][n-1], score[2][n-1]))

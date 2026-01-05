@@ -13,7 +13,7 @@ def combination(data, res, index):
         return
     if index == len(data):
         return
-    
+
     # general case
     # 1. index번 데이터 선택
     res.append(data[index])

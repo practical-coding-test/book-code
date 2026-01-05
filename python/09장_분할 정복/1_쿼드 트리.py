@@ -13,11 +13,11 @@ def quad_tree(i, j, n):
     # 모두 1이면 '1'을 반환합니다.
     if quad_sum == n*n:
         return '1'
-    
+
     # 모두 0이면 '0'을 반환합니다.
     elif quad_sum == 0:
         return '0'
-    
+
     # 0과 1이 섞여있으면 4 부분으로 나눠 함수를 호출합니다.
     return '(' + quad_tree(i, j, n//2) + \
             quad_tree(i, j+n//2, n//2) + \

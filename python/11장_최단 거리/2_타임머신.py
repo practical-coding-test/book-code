@@ -21,7 +21,7 @@ for count in range(n):
                 infinity_time_travel = True
 
             arrive_time[b] = arrive_time[a] + time
-            
+
 if infinity_time_travel:
     print(-1)
 else:

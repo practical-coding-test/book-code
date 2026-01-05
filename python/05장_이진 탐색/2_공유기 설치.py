@@ -23,7 +23,7 @@ def parametric_search(house, c):
     end = 0x3f3f3f3f
     while start < end:
         mid = (start + end)//2
-        
+
         if determine(house, c, mid):
             start = mid + 1
         else:

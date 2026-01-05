@@ -24,7 +24,7 @@ for i in range(k, len(sushi)):
     sushi_num = sushi[i]
     remove_num = sushi[i-k]
 
-		# 이전에 없던 초밥 종류인 경우 종류 하나 추가
+    # 이전에 없던 초밥 종류인 경우 종류 하나 추가
     if sliding_num[sushi_num] == 0:
         type_num +=1
     sliding_num[sushi_num] += 1

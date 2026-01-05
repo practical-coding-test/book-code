@@ -28,14 +28,14 @@ for start in range(1, n+1):
 
     while q:
         now = q.popleft()
-        
+
         for next in adj[now]:
             if visit[next] != start:
                 dist[next] = dist[now]+1
                 visit[next] = start
                 kevin += dist[next]
                 q.append(next)
-    
+
     if min_kevin > kevin:
         min_kevin = kevin
         answer = start

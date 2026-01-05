@@ -43,7 +43,7 @@ def bfs(now):
 
         # 현재 방문한 지점 출력
         print(now, end=' ')
-        
+
         for next in adj[now]:
             if visit[next] == 2: continue
             visit[next] = 2

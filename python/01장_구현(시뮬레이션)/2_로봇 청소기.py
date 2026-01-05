@@ -12,7 +12,7 @@ def is_wall(r,c):
     return room[r][c] == 1
 
 def clean_room(r,c):
-		room[r][c] = 2
+    room[r][c] = 2
 
 def get_next_dir(r,c,dir):
     for d in range(1,5):

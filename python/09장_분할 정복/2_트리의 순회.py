@@ -9,7 +9,7 @@ class Node:
         self.value = value
         self.left = left
         self.right = right
-    
+
 n = int(input())
 inorder = list(map(int, input().split()))
 post_order = list(map(int, input().split()))
@@ -22,7 +22,7 @@ def make_tree(left, right):
     global index
     if index == -1:
         return
-    
+
     # 범위가 맞지 않으면 노드가 없는 것입니다.
     if left >= right:
         return None
