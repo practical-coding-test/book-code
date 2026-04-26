@@ -26,17 +26,17 @@ def parametric_search(m, bead):
     end = sum(bead)+1
 
     while start < end:
-        mid = (start+end)//2
+        mid = (start+end) // 2
 
         result, bead_num_result = determine(bead, mid, m)
         if not result:
-            start = mid+1
+            start = mid + 1
         else:
             end = mid
             bead_num = bead_num_result
     return start, bead_num
 
-n,m = map(int, input().split())
+n, m = map(int, input().split())
 bead = list(map(int, input().split()))
 
 result, bead_num = parametric_search(m, bead)
