@@ -10,7 +10,7 @@ build_time = [0] * n
 # 진입 차수
 indegree = [0] * n
 need_time = [0] * n
-dq = deque()
+q = deque()
 
 for i in range(n):
     info = list(map(int, input().split()))
@@ -25,12 +25,12 @@ for i in range(n):
 for building in range(n):
     # 진입 차수 0인 노드를 큐에 삽입합니다.
     if indegree[building] == 0:
-        dq.append(building)
+        q.append(building)
         # 처음 건물들의 건축 완성 시간은 건물을 건설하는데 걸리는 시간과 일치합니다.
         build_time[building] = need_time[building]
 
-while dq:
-    constructed = dq.popleft()
+while q:
+    constructed = q.popleft()
 
     for next in adj[constructed]:
         # 다음 건물의 완성 시간은 이전 건물이 완성된 시간과 해당 건물을 짓는 시간을 더한 값들 중에서 최댓값이 됩니다.
@@ -38,7 +38,7 @@ while dq:
 
         indegree[next] -= 1
         if indegree[next] == 0:
-            dq.append(next)
+            q.append(next)
 
 # 정답 출력
 for t in build_time:
