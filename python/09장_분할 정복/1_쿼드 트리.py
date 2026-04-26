@@ -24,4 +24,4 @@ def quad_tree(i, j, n):
             quad_tree(i+n//2, j, n//2) + \
             quad_tree(i+n//2, j+n//2, n//2) + ')'
 
-print(quad_tree(0,0,n))
+print(quad_tree(0, 0, n))
