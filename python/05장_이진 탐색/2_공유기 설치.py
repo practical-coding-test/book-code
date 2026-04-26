@@ -1,5 +1,4 @@
 # https://www.acmicpc.net/problem/2110
-# USACO February 2005 Contest Gold 3번
 
 import sys
 
@@ -22,7 +21,7 @@ def parametric_search(house, c):
     start = 1
     end = 0x3f3f3f3f
     while start < end:
-        mid = (start + end)//2
+        mid = (start + end) // 2
 
         if determine(house, c, mid):
             start = mid + 1
