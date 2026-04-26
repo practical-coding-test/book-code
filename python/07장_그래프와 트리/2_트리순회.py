@@ -4,13 +4,13 @@ preorder = []
 inorder = []
 postorder = []
 
-class node:
+class Node:
     def __init__(self, node, left, right):
         self.node = node
         self.left = left
         self.right = right
 
-def travel(now:node):
+def travel(now: Node):
     if not now: return
 
     preorder.append(now.node)
@@ -20,19 +20,19 @@ def travel(now:node):
     postorder.append(now.node)
 
 n = int(input())
-nodes = [node(c,None, None) for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'] + [None]
-trie = {c : node for (c,node) in zip('ABCDEFGHIJKLMNOPQRSTUVWXYZ.', nodes)}
+nodes = [Node(c, None, None) for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'] + [None]
+tree = {c : node for (c, node) in zip('ABCDEFGHIJKLMNOPQRSTUVWXYZ.', nodes)}
 
 for i in range(n):
     now, left, right = input().split()
-    node = trie[now]
-    left = trie[left]
-    right = trie[right]
+    node = tree[now]
+    left = tree[left]
+    right = tree[right]
 
     node.left = left
     node.right = right
 
-travel(trie['A'])
+travel(tree['A'])
 
 print(''.join(preorder))
 print(''.join(inorder))
