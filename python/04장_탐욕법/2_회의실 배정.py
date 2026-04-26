@@ -4,11 +4,11 @@ import heapq
 
 class meeting:
     def __init__(self,info):
-        self.st, self.ed = info
+        self.start, self.end = info
     def __lt__(self, other):
-        if self.ed != other.ed:
-            return self.ed < other.ed
-        return self.st < other.st
+        if self.end != other.end:
+            return self.end < other.end
+        return self.start < other.start
 
 n = int(input())
 info = []
@@ -22,10 +22,10 @@ res = 0
 
 while info:
     m = heapq.heappop(info)
-    st, ed = m.st, m.ed
+    start, end = m.start, m.end
     # 이전에 회의가 끝난 시간이 현재 회의 시작 시간 이상이어야함
-    if last <= st:
+    if last <= start:
         res += 1
         # 끝난 시간 갱신
-        last = ed
+        last = end
 print(res)
