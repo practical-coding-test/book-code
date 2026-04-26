@@ -27,14 +27,15 @@ def get_next_dir(r,c,dir):
 clean = 0
 
 while not is_wall(r,c):
-    clean += int(room[r][c] == 0)
+    if(room[r][c] == 0):
+        clean += 1
     clean_room(r,c)
-    next_dir = get_next_dir(r,c,dir)
+    next_dir = get_next_dir(r, c, dir)
 
     if next_dir >= 0:
         dir = next_dir
     else:
         next_dir += 404
-    r,c = r + dr[next_dir], c + dc[next_dir]
+    r, c = r + dr[next_dir], c + dc[next_dir]
 
 print(clean)
