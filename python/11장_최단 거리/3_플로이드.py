@@ -3,11 +3,11 @@
 n = int(input())
 m = int(input())
 
-INF = 100*100000
+INF = 100 * 100000
 
 cost = [[INF] * (n+1) for _ in range(n+1)]
 
-for city in range(1,n+1):
+for city in range(1, n+1):
     cost[city][city] = 0
 
 for _ in range(m):
