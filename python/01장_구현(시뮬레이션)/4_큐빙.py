@@ -1,12 +1,11 @@
 # https://www.acmicpc.net/problem/5373 * 삼성전자 기출문제 *
-# 출처: ICPC > BAPC 2012 Preliminaries C번
 
 import sys 
 
 color = 'wyrogb'
 mapping = 'UDFBLR'
 
-mapping_table = {c:i for i,c in enumerate(mapping)}
+mapping_table = {c:i for i, c in enumerate(mapping)}
 rotate_dir = {'-':3, '+':1}
 rotate_table = [
     [36,37,38,18,19,20,45,46,47,27,28,29],
@@ -41,9 +40,9 @@ def rotate_face(cube_flat, face):
 
 def rotate_12(cube_flat, before_rotate_12, after_rotate_12):
     # 12칸 회전
-    store_cube = [cube_flat[v] for v in after_rotate_12] 
-    for i,v in zip(before_rotate_12, store_cube):
-        cube_flat[i] = v
+    tmp = [cube_flat[v] for v in after_rotate_12] 
+    for dst, val in zip(before_rotate_12, tmp):
+        cube_flat[dst] = val
 
 def rotate(cube_flat, face, before_rotate_12, after_rotate_12):
     rotate_face(cube_flat, face)
