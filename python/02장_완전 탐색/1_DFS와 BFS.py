@@ -2,21 +2,21 @@
 
 from collections import deque
 
-N, M, V = map(int, input().split())
+n, m, v = map(int, input().split())
 
 # 인접 리스트 생성
-adj = [[] for _ in range(N+1)]
+adj = [[] for _ in range(n+1)]
 # DFS와 BFS 중복 방문을 막기 위한 visit 배열 생성
-visit = [0] * (N+1)
+visit = [0] * (n+1)
 
 # 인접 리스트 생성
-for i in range(M):
+for i in range(m):
     f, t = map(int, input().split())
     adj[f].append(t)
     adj[t].append(f)
 
 # 낮은 번호부터 방문하기 위해 정렬
-for i in range(N):
+for i in range(n):
     adj[i+1].sort()
 
 def dfs(now):
@@ -31,15 +31,16 @@ def dfs(now):
         dfs(next)
 
     # base case: 인접 행렬에서 다음에 방문할 노드가 없는 경우
+    return
 
-def bfs(now):
-    dq = deque([now])
+def bfs():
+    q = deque([v])
 
     # DFS에서 방문 체크를 1로 했기 때문에, BFS는 2로 방문 체크
-    visit[now] = 2
+    visit[v] = 2
 
-    while len(dq) != 0:
-        now = dq.popleft()
+    while len(q) != 0:
+        now = q.popleft()
 
         # 현재 방문한 지점 출력
         print(now, end=' ')
@@ -47,9 +48,9 @@ def bfs(now):
         for next in adj[now]:
             if visit[next] == 2: continue
             visit[next] = 2
-            dq.append(next)
+            q.append(next)
 
 # DFS 방문 지점 출력 후 BFS 방문 지점 출력
-dfs(V)
+dfs(v)
 print()
-bfs(V)
+bfs()
