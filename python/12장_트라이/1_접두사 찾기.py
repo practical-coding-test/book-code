@@ -15,9 +15,6 @@ class Trie:
             if char not in node.child:
                 node.child[char] = TrieNode()
             node = node.child[char]
-            
-        # 이 문자로 끝나는 단어가 존재함
-        node.end = True
 
     def find_prefix(self, prefix):
         node = self.root
