@@ -1,11 +1,10 @@
 # https://www.acmicpc.net/problem/7453
-# ICPC SWERC 2005 E번
 
 n = int(input())
 A, B, C, D = [],[],[],[]
 
 for i in range(n):
-    a,b,c,d = map(int,input().split())
+    a, b, c, d = map(int,input().split())
     A.append(a)
     B.append(b)
     C.append(c)
@@ -20,7 +19,7 @@ j = len(CD)-1
 result = 0
 while i < len(AB) and j >= 0:
     if AB[i] + CD[j] == 0:
-        # 배열에서 같은 값이 있으면 해당 지점과 다른값이 나올때 까지 지점을 옮겨줍니다.
+        # 배열에서 같은 값이 있으면 해당 지점과 다른 값이 나올때 까지 지점을 이동합니다.
         store_i = i
         store_j = j
 
