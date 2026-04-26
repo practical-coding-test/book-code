@@ -3,7 +3,6 @@
 class TrieNode:
     def __init__(self):
         self.child = {}
-        self.end = False # False로 초기화
 
 class Trie:
     def __init__(self):
@@ -19,16 +18,6 @@ class Trie:
             
         # 이 문자로 끝나는 단어가 존재함
         node.end = True
-
-    def find(self, word):
-        node = self.root
-
-        for char in word:
-            if char not in node.child:
-                return False
-            node = node.child[char]
-
-        return node.end
 
     def find_prefix(self, prefix):
         node = self.root
