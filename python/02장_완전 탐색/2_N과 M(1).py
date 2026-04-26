@@ -1,23 +1,23 @@
 # https://www.acmicpc.net/problem/15649
 
-N, M = map(int, input().split())
+n, m = map(int, input().split())
 
 # 이미 선택된 수인지 체크
-visit = [0]*(N+1)
+visit = [0]*(n+1)
 res = []
 
 def permutation(len):
     # 현재 선택된 배열의 길이
     # base case: 배열이 처음에 주어진 m만큼 선택
-    if len == M:
+    if len == m:
         for i in res:
             print(i, end=' ')
         print()
         return
 
-    for i in range(N):
+    for i in range(n):
         # 1 ~ n 까지의 수 선택
-        v = i+1
+        v = i + 1
 
         # 이미 선택된 수면 다른 수 선택
         if visit[v] == 1:
