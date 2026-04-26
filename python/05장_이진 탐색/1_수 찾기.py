@@ -5,7 +5,7 @@ def binary_search(dest, arr):
     end = len(arr)
 
     while start < end:
-        mid = (start+end)//2
+        mid = (start+end ) // 2
         num = arr[mid]
 
         if dest == num:
