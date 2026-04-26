@@ -23,14 +23,14 @@ hq = [(0, k)]
 dist[k] = 0
 
 while hq:
-    nowCost, now = heapq.heappop(hq)
+    now_cost, now = heapq.heappop(hq)
 
-    if nowCost > dist[now]:
+    if now_cost > dist[now]:
         continue
 
-    for next, nextCost in zip(adj[now], cost[now]):
-        if dist[next] > nowCost + nextCost:
-            dist[next] = nowCost + nextCost
+    for next, next_cost in zip(adj[now], cost[now]):
+        if dist[next] > now_cost + next_cost:
+            dist[next] = now_cost + next_cost
             heapq.heappush(hq, (dist[next], next))
 
 for d in dist[1:]:
