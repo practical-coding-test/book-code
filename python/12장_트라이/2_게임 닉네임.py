@@ -16,13 +16,13 @@ class Trie:
     def insert(self, nickname):
         node = self.root
         ret = []
-        isContinue = True
+        is_continue = True
         for char in nickname:
-            if isContinue:
+            if is_continue:
                 ret.append(char)
 
             if char not in node.child:
-                isContinue = False
+                is_continue = False
                 node.child[char] = TrieNode()
             node = node.child[char]
 
